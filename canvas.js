@@ -7,9 +7,8 @@ function createParams() {
 
   //create new data data request
   var req = opensocial.newDataRequest();
+
   //param to get viewer
- 
-  console.log(req.newFetchPersonRequest(opensocial.IdSpec.PersonId.VIEWER));
   req.add(req.newFetchPersonRequest(opensocial.IdSpec.PersonId.VIEWER), 'viewer');
 
   //create params 
@@ -35,10 +34,8 @@ function displayFriends(data) {
 
     //adjust height
     //gadgets.window.adjustHeight();
-
 }
 
-// TODO: Write the code for Canvas view.
 function fetchPeople() {
   
   var req = createParams();

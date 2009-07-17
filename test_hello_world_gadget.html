@@ -72,17 +72,17 @@
           it("should display the list of friends", function() {
             var req = createParams();
             req.send(displayFriends);            
+            var dom_test = document.getElementById('friends');
+            expect(dom_test.innerHTML).to(equal, '<li>george.doe</li><li>jane.doe</li><li>john.doe</li>');
             });
         });
       });
     </script>
   </head>
   <body>
-    test  
     <div>
       <span id='viewer'></span>
       <ul id='friends'></ul>
-    </div>
-      
+    </div>      
   </body>
 </html>

@@ -140,7 +140,6 @@ var result = [{"data":{"addresses":[{"postalCode":"12345","longitude":143.0859,"
 
 SimpleContainer.prototype.requestData = function(dataRequest, callback) {
   callback = callback || function(){};
-  console.log(dataRequest);
   var requestObjects = dataRequest.getRequestObjects();
   var totalRequests = requestObjects.length;
 
@@ -174,7 +173,6 @@ SimpleContainer.prototype.requestData = function(dataRequest, callback) {
     for (var k = 0; k < requestObjects.length; k++) {
       var request = requestObjects[k];
       var response = result[k];
-      console.log(request);
       if (request.key && response.id != request.key) {
         throw "Request key(" + request.key +
             ") and response id(" + response.id + ") do not match";
