@@ -8,6 +8,8 @@ function createParams() {
   //create new data data request
   var req = opensocial.newDataRequest();
   //param to get viewer
+ 
+  console.log(req.newFetchPersonRequest(opensocial.IdSpec.PersonId.VIEWER));
   req.add(req.newFetchPersonRequest(opensocial.IdSpec.PersonId.VIEWER), 'viewer');
 
   //create params 
@@ -17,11 +19,11 @@ function createParams() {
   params[opensocial.IdSpec.Field.GROUP_ID] = 'FRIENDS';
   var idSpec = opensocial.newIdSpec(params);
   req.add(req.newFetchPeopleRequest(idSpec), 'friends');
+  
   return req;
 }
 
 function displayFriends(data) {
-
     var viewer = data.get('viewer').getData();
     //update DOM
     document.getElementById('viewer').innerHTML = viewer.getId();
@@ -32,7 +34,7 @@ function displayFriends(data) {
     });
 
     //adjust height
-    gadgets.window.adjustHeight();
+    //gadgets.window.adjustHeight();
 
 }
 

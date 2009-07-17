@@ -16,6 +16,16 @@
     <script src="plugins/screw.mocking.js"></script>
     <link rel="stylesheet" href="lib/screw.css" />
 
+    <script src="lib/opensocial/core/core.js"></script>
+    <script src="lib/opensocial/core/config.js"></script>
+    <script src="lib/opensocial/core/util.js"></script>
+    <script src="lib/opensocial/core/auth.js"></script>
+    <script src="lib/opensocial/core/auth-init.js"></script>
+    <script src="lib/opensocial/core/prefs.js"></script>
+    <script src="lib/opensocial/core/json.js"></script>
+    <script src="lib/opensocial/core/legacy.js"></script>
+
+    <script src="lib/opensocial/core.io/io.js"></script>
 
     <!-- include opensocial JS -->
     <script src="lib/opensocial/opensocial-reference/opensocial.js"></script>
@@ -40,17 +50,12 @@
     <script src="lib/opensocial/opensocial-reference/responseitem.js"></script>
     <script src="lib/opensocial/opensocial-reference/url.js"></script>
 
-    <script src="core/core.js"></script>
-    <script src="core/config.js"></script>
-    <script src="core/util.js"></script>
-    <script src="core/auth.js"></script>
-    <script src="core/auth-init.js"></script>
-    <script src="core/prefs.js"></script>
-    <script src="core/json.js"></script>
-    <script src="core/legacy.js"></script>
 
-    <script src="core.io/io.js"></script>
+    <script src="lib/opensocial/opensocial-base/fieldtranslations.js"></script>
+    <script src="lib/opensocial/opensocial-base/jsonactivity.js"></script>
+    <script src="lib/opensocial/opensocial-base/jsonperson.js"></script>
 
+    <script src="lib/opensocial/opensocial-jsonrpc/jsonrpccontainer.js"></script>
     <script src="mock_opensocial.js"></script>
 
     <script src="canvas.js"></script>
@@ -59,23 +64,25 @@
       Screw.Unit(function() {
         
         before(function() {
-
-//          request = mock("request");
-//          opensocial = mock().stub("newDataRequest").and_return(request);
-  
           shindig_container = new SimpleContainer();
-          opensocial.Container.setContainer(shindig_container);
- 
-  
+          opensocial.Container.setContainer(shindig_container);  
         })
         
-        describe("get data", function() {
-          it("should return a list of friends", function() {
+        describe("displayFriends", function() {
+          it("should display the list of friends", function() {
             var req = createParams();
-          });
+            req.send(displayFriends);            
+            });
         });
       });
     </script>
   </head>
-  <body></body>
+  <body>
+    test  
+    <div>
+      <span id='viewer'></span>
+      <ul id='friends'></ul>
+    </div>
+      
+  </body>
 </html>
