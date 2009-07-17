@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <!-- These are all of the necessary javascript and css files required to run your tests -->
+    <script src="lib/jquery-1.3.2.js"></script>
+    <script src="lib/jquery.fn.js"></script>
+    <script src="lib/jquery.print.js"></script>
+    <script src="lib/screw.builder.js"></script>
+    <script src="lib/screw.matchers.js"></script>
+    <script src="lib/screw.events.js"></script>
+    <script src="lib/screw.behaviors.js"></script>
+    <link rel="stylesheet" href="lib/screw.css">
+    
+    <script type="text/javascript">
+      // Here is the system under test (SUT)--that is, your application code that you would like
+      // to test.
+      function foo() {
+        return "Hello, World!";
+      }
+    </script>
+    
+    <script type="text/javascript">
+      Screw.Unit(function() {
+        describe("foo", function() {
+          it("returns \"Hello, World!\"", function() {
+            expect(foo()).to(equal, "Hello, World!");
+          });
+        });
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

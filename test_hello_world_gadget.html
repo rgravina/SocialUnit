@@ -1,0 +1,81 @@
+<html>
+  <head>
+    <!-- These are all of the necessary javascript and css files required to run your tests -->
+    <script src="lib/jquery-1.3.2.js"></script>
+    <script src="lib/jquery.fn.js"></script>
+    <script src="lib/jquery.print.js"></script>
+
+    <script src="lib/screw.builder.js"></script>
+    <script src="lib/screw.matchers.js"></script>
+    <script src="lib/screw.events.js"></script>
+    <script src="lib/screw.behaviors.js"></script>
+
+    <script src="lib/smoke.core.js"></script>
+    <script src="lib/smoke.mock.js"></script>
+    <script src="lib/smoke.stub.js"></script>
+    <script src="plugins/screw.mocking.js"></script>
+    <link rel="stylesheet" href="lib/screw.css" />
+
+
+    <!-- include opensocial JS -->
+    <script src="lib/opensocial/opensocial-reference/opensocial.js"></script>
+    <script src="lib/opensocial/opensocial-reference/activity.js"></script>
+    <script src="lib/opensocial/opensocial-reference/address.js"></script>
+    <script src="lib/opensocial/opensocial-reference/bodytype.js"></script>
+    <script src="lib/opensocial/opensocial-reference/collection.js"></script>
+    <script src="lib/opensocial/opensocial-reference/container.js"></script>
+    <script src="lib/opensocial/opensocial-reference/datarequest.js"></script>
+    <script src="lib/opensocial/opensocial-reference/dataresponse.js"></script>
+    <script src="lib/opensocial/opensocial-reference/email.js"></script>
+    <script src="lib/opensocial/opensocial-reference/enum.js"></script>
+    <script src="lib/opensocial/opensocial-reference/environment.js"></script>
+    <script src="lib/opensocial/opensocial-reference/idspec.js"></script>
+    <script src="lib/opensocial/opensocial-reference/mediaitem.js"></script>
+    <script src="lib/opensocial/opensocial-reference/message.js"></script>
+    <script src="lib/opensocial/opensocial-reference/name.js"></script>
+    <script src="lib/opensocial/opensocial-reference/navigationparameters.js"></script>
+    <script src="lib/opensocial/opensocial-reference/organization.js"></script>
+    <script src="lib/opensocial/opensocial-reference/person.js"></script>
+    <script src="lib/opensocial/opensocial-reference/phone.js"></script>
+    <script src="lib/opensocial/opensocial-reference/responseitem.js"></script>
+    <script src="lib/opensocial/opensocial-reference/url.js"></script>
+
+    <script src="core/core.js"></script>
+    <script src="core/config.js"></script>
+    <script src="core/util.js"></script>
+    <script src="core/auth.js"></script>
+    <script src="core/auth-init.js"></script>
+    <script src="core/prefs.js"></script>
+    <script src="core/json.js"></script>
+    <script src="core/legacy.js"></script>
+
+    <script src="core.io/io.js"></script>
+
+    <script src="mock_opensocial.js"></script>
+
+    <script src="canvas.js"></script>
+        
+    <script type="text/javascript">
+      Screw.Unit(function() {
+        
+        before(function() {
+
+//          request = mock("request");
+//          opensocial = mock().stub("newDataRequest").and_return(request);
+  
+          shindig_container = new SimpleContainer();
+          opensocial.Container.setContainer(shindig_container);
+ 
+  
+        })
+        
+        describe("get data", function() {
+          it("should return a list of friends", function() {
+            var req = createParams();
+          });
+        });
+      });
+    </script>
+  </head>
+  <body></body>
+</html>
