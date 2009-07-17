@@ -12,4 +12,4 @@ It is currently incomplete, contains hardcoded sample data and has plenty of cop
 
 # Thanks to
 
-* Yoichiro Tanaka - for pointing us towards the Shindig 
+* Yoichiro Tanaka - for pointing us towards the Shindig Javascript code and the JsonRpcContainer, and hosting the OpenSocial Hackathon where we started this project.
